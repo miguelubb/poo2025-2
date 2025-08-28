@@ -1,4 +1,4 @@
-package ejemplos.semana01.constantes_enumeraciones;
+package ejemplos.semana01.constantes_enumeraciones.color;
 
 public class Color {
     public static final int ROJO = 1;
