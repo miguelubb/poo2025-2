@@ -47,7 +47,9 @@ public class Lampara {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Lampara lampara)) return false;
-        return potencia == lampara.potencia && Objects.equals(marca, lampara.marca) && estado == lampara.estado;
+        return potencia == lampara.potencia &&
+                Objects.equals(marca, lampara.marca) &&
+                estado == lampara.estado;
     }
 
     @Override

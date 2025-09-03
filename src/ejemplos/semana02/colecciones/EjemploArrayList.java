@@ -1,8 +1,11 @@
 package ejemplos.semana02.colecciones;
 
-public class EjemploArregloDeObjetos {
+import java.util.ArrayList;
+
+public class EjemploArrayList {
     public static void main(String[] args) {
-        Lampara[] misLamparas = new Lampara[10];
+        //Lampara[] misLamparas = new Lampara[10];
+        ArrayList<Lampara> misLamparas = new ArrayList<>();
         String[] marcas = {
                 "Philips",
                 "Osram",
@@ -28,17 +31,19 @@ public class EjemploArregloDeObjetos {
                 500
         };
 
-        for (int i = 0; i < misLamparas.length; i++) {
-            misLamparas[i] = new Lampara(marcas[i], potencias[i]);
+        for (int i = 0; i < 10; i++) {
+           // misLamparas[i] = new Lampara(marcas[i], potencias[i]);
+            misLamparas.add(new Lampara(marcas[i], potencias[i]));
         }
-
-        for (int i = 0; i < misLamparas.length; i++) {
-            System.out.println(misLamparas[i]);
+        //imprimir todas las lámparas
+        for (int i = 0; i < misLamparas.size(); i++) {
+            //System.out.println(misLamparas[i]);
+            System.out.println(misLamparas.get(i));
         }
 
         int encendidas = 0;
-        for (int i = 0; i < misLamparas.length; i++) {
-            if (misLamparas[i].getEstado() == Estado.ENCENDIDA) {
+        for (int i = 0; i < misLamparas.size(); i++) {
+            if (misLamparas.get(i).getEstado() == Estado.ENCENDIDA) {
                 encendidas++;
             }
         }
@@ -46,8 +51,8 @@ public class EjemploArregloDeObjetos {
         System.out.println("Hay " + encendidas + " lámparas encendidas.");
 
         int menorA80 = 0;
-        for (int i = 0; i < misLamparas.length; i++) {
-            if (misLamparas[i].getPotencia() < 80) {
+        for (int i = 0; i < misLamparas.size(); i++) {
+            if (misLamparas.get(i).getPotencia() < 80) {
                 menorA80++;
             }
         }
