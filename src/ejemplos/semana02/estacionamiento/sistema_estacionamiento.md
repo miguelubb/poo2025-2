@@ -10,7 +10,7 @@ Existe una clase `Estacionamiento` con `main` que mantiene un `ArrayList` de reg
 1) **Entrada de vehículo**  
 2) **Salida de vehículo**  
 3) **Listar vehículos sin salida** (con tiempo transcurrido)  
-4) **Listado de ventas para un día dado**
+4) **Listado de ventas del día**
 
 ---
 
@@ -22,16 +22,16 @@ classDiagram
 
     class RegistroEstadia {
         -patente : String
-        -entrada : DateTime
-        -salida  : DateTime
+        -entrada : LoclTime
+        -salida  : LocalTime
         +valorMinuto : double$
-        +RegistroEstadia(patente:String, entrada:DateTime)
+        +RegistroEstadia(patente:String, entrada:LocalTime)
         +getPatente() String
         +setPatente(p:String) void
-        +getEntrada() DateTime
-        +setEntrada(e:DateTime) void
-        +getSalida() DateTime
-        +setSalida(s:DateTime) void
+        +getEntrada() LocalTime
+        +setEntrada(e:LocalTime) void
+        +getSalida() LocalTime
+        +setSalida(s:LocalTime) void
         +tiempoTranscurridoMin() long
         +valorACobrar() double
     }
