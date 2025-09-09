@@ -73,8 +73,8 @@ public class SistemaEvento {
             lista[i][0]=eventos.get(i).getNombre();
             lista[i][1]=eventos.get(i).getFecha().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             //lista[i][1]=eventos.get(i).getFecha().toString();//formato iso "yyyy-MM-dd"
-            lista[i][2]=String.format("%,d",eventos.get(i).getPrecio());
             lista[i][3]=eventos.get(i).getTipo().toString();
+            lista[i][2]=String.format("%,d",eventos.get(i).getPrecio());
         }
         return lista;
     }
