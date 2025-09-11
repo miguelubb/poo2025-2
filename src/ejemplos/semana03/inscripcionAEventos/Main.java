@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         String[] menu = {"Crear evento", "Crear Asistente", "Inscribir asistente a evento",
                 "Lista de eventos", "Lista de asistentes", "Lista de asistentes a evento", "Salir"};
+        init();
         int op = 0;
         do {
             System.out.println("Menú Principal");
@@ -30,16 +31,29 @@ public class Main {
             }
         } while (op != menu.length);
     }
-
+    private static void init(){
+        sistema.creaEvento("UBB", LocalDate.of(2025, 12,12),1500, TipoEvento.CHARLA);
+        sistema.creaEvento("Hackaton", LocalDate.of(2025, 12,12),1500, TipoEvento.CHARLA);
+        sistema.creaAsistente("Juan","juan@gmail.com");
+        sistema.creaAsistente("Ana","ana@gmail.com");
+        sistema.creaAsistente("Isabel","isabel@gmail.com");
+        sistema.creaAsistente("Luis","luis@gmail.com");
+        sistema.inscribeAsistenteEnEvento( "Juan", "UBB");
+        sistema.inscribeAsistenteEnEvento( "Ana", "UBB");
+        sistema.inscribeAsistenteEnEvento( "Isabel", "UBB");
+        sistema.inscribeAsistenteEnEvento( "Juan", "Hackaton");
+        sistema.inscribeAsistenteEnEvento( "Ana", "Hackaton");
+        sistema.inscribeAsistenteEnEvento( "Luis", "Hackaton");
+    }
     public static void creaEvento() {
         System.out.println("Creación de Evento");
         System.out.println("Nombre: ");
         String nombre=tcld.next();
         System.out.println("Fecha (dd/MM/yyyy): ");
         String[] fechaStr=tcld.next().split("/");
-        int year=Integer.parseInt(fechaStr[2]);
-        int month=Integer.parseInt(fechaStr[1]);
         int day=Integer.parseInt(fechaStr[0]);
+        int month=Integer.parseInt(fechaStr[1]);
+        int year=Integer.parseInt(fechaStr[2]);
         LocalDate fecha=LocalDate.of(year,month,day);
         System.out.println("Precio: ");
         int precio=tcld.nextInt();
@@ -86,10 +100,10 @@ public class Main {
         String[][] eventos=sistema.listaEventos();
         System.out.println("Lista de Eventos");
         System.out.printf("*%20s-%12s-%12s-%12s*%n",linea(20),linea(12),linea(12),linea(12));
-        System.out.printf("|%20s|%12s|%12s|%12s|%n","Nombre","Fecha","Tipo","Precio");
+        System.out.printf("|%-20s|%12s|%12s|%-12s|%n","Nombre","Fecha","Precio","Tipo");
         for (int i = 0; i < eventos.length; i++) {
             System.out.printf("+%20s+%12s+%12s+%12s+%n",linea(20),linea(12),linea(12),linea(12));
-            System.out.printf("|%20s|%12s|%12s|%12s|%n",eventos[i][0],eventos[i][1], eventos[i][2], eventos[i][3]);
+            System.out.printf("|%-20s|%12s|%12s|%-12s|%n",eventos[i][0],eventos[i][1], eventos[i][2], eventos[i][3]);
         }
         System.out.printf("*%20s-%12s-%12s-%12s*%n",linea(20),linea(12),linea(12),linea(12));
     }
@@ -98,10 +112,10 @@ public class Main {
         String[][] asistentes=sistema.listaAsistentes();
         System.out.println("Lista de Asistentes");
         System.out.printf("*%30s-%40s*%n",linea(30),linea(40));
-        System.out.printf("|%30s|%40s|%n","Nombre","Email");
+        System.out.printf("|%-30s|%-40s|%n","Nombre","Email");
         for (int i = 0; i < asistentes.length; i++) {
             System.out.printf("|%30s+%40s|%n",linea(30),linea(40));
-            System.out.printf("|%30s+%40s|%n",asistentes[i][0],asistentes[i][1]);
+            System.out.printf("|%-30s+%-40s|%n",asistentes[i][0],asistentes[i][1]);
         }
         System.out.printf("*%30s+%40s*%n",linea(30),linea(40));
     }
