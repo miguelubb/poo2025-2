@@ -14,6 +14,7 @@ public class EjemploOptional {
         //como podríamos leer la contraseña sin mostrala en pantalla?
         String password=sc.next();
         Optional<User> user = findByUserName(username);
+
         if (user.isPresent()) {
             if(user.get().getPwd().equals(password)) {
                 System.out.println("hola " + user.get().getName() + ", Bienvenido al sistema!");
@@ -23,6 +24,17 @@ public class EjemploOptional {
         }else{
             System.out.println("nombre de usuario incorrecto o no existe");
         }
+
+        //otra forma sin usar isPresent()
+        //el método orElse retorna el objeto del Optional o bien
+        //el objeto que se pasa el método orElse
+        User emptyUsr=new User("","");
+        if(user.orElse(emptyUsr).getPwd().equals(password)) {
+            System.out.println("hola " + user.get().getName() + ", Bienvenido al sistema!");
+        }else{
+            System.out.println("Usuario o Contraseña incorrecta!");
+        }
+
     }
 
     private static Optional<User> findByUserName(String username) {
