@@ -3,6 +3,7 @@ package ejemplos.semana07.ejemploExcepcionesOptionalMVC.vista;
 import ejemplos.semana07.ejemploExcepcionesOptionalMVC.controlador.Controlador;
 import ejemplos.semana07.ejemploExcepcionesOptionalMVC.excepciones.EmptyValueException;
 import ejemplos.semana07.ejemploExcepcionesOptionalMVC.excepciones.NullValueException;
+import ejemplos.semana07.ejemploExcepcionesOptionalMVC.excepciones.RutException;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
@@ -27,8 +28,14 @@ public class UIViaje {
             System.out.println("""
                     ...::: Menú Principal :::...
                     1) Crear pasajero Escolar
-                    2) ...
-                    3)
+                    2) Crear pasajero Tercera edad
+                    3) Crear pasejero Normal
+                    4) Crear Viaje
+                    5) Planilla de viaje (incluye recaudación)
+                    6) Listar pasajeros(de los distintos tipos)
+                    7) Listar Viajes
+                    8) Subir un pasajero a Viaje
+                    9) bajar un pasajero a Viaje
                     0) Salir
                     Ingrese opcion:
                     """);
@@ -56,14 +63,16 @@ public class UIViaje {
         System.out.println("Nivel: ");
         String nivel=sc.next();
         try {
-            boolean ok= Controlador.getInstance()
-                    .crearEscolar(rut, nombre, telefono, contacto, nivel);
+            Controlador sistema=Controlador.getInstance();
+            boolean ok= sistema.crearEscolar(rut, nombre, telefono, contacto, nivel);
             System.out.println(ok?"Pasajero Escolar creada exitosamente"
                     :"Pasajero Escolar Está repetido");
         } catch (EmptyValueException e) {
             System.out.println("El rut no puede estar vacío");
         } catch (NullValueException e) {
             System.out.println("El rut no puede ser nulo");
+        } catch (RutException e) {
+            System.out.println("El rut no es válido");
         }
     }
 }
