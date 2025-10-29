@@ -1,0 +1,2 @@
+1; Juan Perez, Juan Pérez; Av. Los Robles 1234, Santiago; +56 9 8456 2231; 1988-03-15
+2; María González; Calle Las Lilas 78, Concepción; +56 9 9123 6785; 1992-07-08
