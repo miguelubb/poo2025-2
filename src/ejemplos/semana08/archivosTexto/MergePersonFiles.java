@@ -36,44 +36,50 @@ public class MergePersonFiles {
                         if(line1[i].equals(line2[i])){
                             output+=";"+line1[i];
                         }else{
-                            output+=";"+line1[i]+"-"+line2[i];
+                            output+=";"+line1[i]+" # "+line2[i];
                         }
                     }
                     out.println(output);
                     line1=null;
                     line2=null;
                 }else if(id1 < id2){
-                    String lineOut=line1[0];
-                    for (int i = 1; i < line1.length; i++) {
-                        lineOut+=line1[i];
-                    }
-                    out.println(lineOut);
+                    out.println(getLineOut(line1));
                     line1=null;
                 }else{
-                    String lineOut=line2[0];
-                    for (int i = 1; i < line2.length; i++) {
-                        lineOut+=line2[i];
-                    }
-                    out.println(lineOut);
+                    out.println(getLineOut(line2));
                     line2=null;
                 }
             }
 
-            while(scFile1.hasNextLine()) {
-                //copio lo que faltó por revisar
+            while(line1!=null||scFile1.hasNextLine()) {
+                if(line1==null){
+                    line1=scFile1.nextLine().split(";");
+                }
+                out.println(getLineOut(line1));
+                line1=null;
             }
 
-            while(scFile2.hasNextLine()) {
-                //copio lo que faltó por revisar
+            while(line2!=null||scFile2.hasNextLine()) {
+                if(line2==null){
+                    line2=scFile2.nextLine().split(";");
+                }
+                out.println(getLineOut(line2));
+                line2=null;
             }
             scFile1.close();
             scFile2.close();
             out.close();
-
-
         } catch (FileNotFoundException e) {
             System.out.println("Archivo no encontrado");
         }
 
+    }
+
+    private static String getLineOut(String[] line1) {
+        String lineOut= line1[0];
+        for (int i = 1; i < line1.length; i++) {
+            lineOut+= ";"+line1[i];
+        }
+        return lineOut;
     }
 }

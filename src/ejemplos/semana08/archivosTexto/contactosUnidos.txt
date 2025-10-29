@@ -1,2 +1,13 @@
-1; Juan Perez, Juan Pérez; Av. Los Robles 1234, Santiago; +56 9 8456 2231; 1988-03-15
+1; Juan Perez #  Juan Pérez; Av. Los Robles 1234, Santiago; +
+56 9 8456 2231; 1988-03-15
 2; María González; Calle Las Lilas 78, Concepción; +56 9 9123 6785; 1992-07-08
+3; Pedro Muñoz; Pasaje El Trébol 56, Valparaiso; +56 9 7312 9987; 1985-11-22
+4; Ana Rojas; Av. Alemania 1200, Temuco; +56 9 6445 1123; 1990-02-10
+5; Ricardo Soto; Camino El Alba 356, La Serena; +56 9 8776 4459; 1987-09-29
+6; Daniela Fuentez; Calle Chacabuco 88, Chillán; +56 9 9833 5571; 1994-05-13
+7; Felipe Herrera; Av. O’Higgins 102, Talca; +56 9 7645 9912; 1989-12-04
+8; Catalina Silva; Av. Pedro de Valdivia 450, Viña del Mar; +56 9 6221 8754; 1996-08-17
+9; Jorge Ramirez #  Jorge Ramírez; Calle Independencia 230, Antofagasta; +56 9 9988 3012; 1983-10-21
+10; Valentina Castro; Pasaje Los Álamos 100, Rancagua #  Pasaje Los Álamos 99, Rancagua; +56 9 9154 2276; 1991-01-30
+11; Sebastián Vega; Av. Colón 780, Punta Arenas; +56 9 8541 6632; 1995-06-11
+12; Camila Torres; Calle Los Naranjos 543, Copiapó; +56 9 9223 1109; 1993-09-05
