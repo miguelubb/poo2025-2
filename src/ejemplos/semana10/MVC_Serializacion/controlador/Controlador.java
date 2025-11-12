@@ -68,8 +68,9 @@ public class Controlador {
     }
     public String[][] listadoContactos(){
         String[][] resultado=new String[contactos.size()][];
+        int i=0;
         for(Contacto contacto:contactos){
-            resultado[0]=contacto.toStringArray();
+            resultado[i++]=contacto.toStringArray();
         }
         return resultado;
     }

@@ -49,7 +49,8 @@ public class Menu {
     private void listarPersona() {
         System.out.println("Lista de personas:");
         System.out.printf("%5s %-20s %-20s %-20s%n", "id", "Nombre", "Email", "Teléfono");
-        for (String[] row : ctrl.listadoContactos()) {
+        String[][] listado=ctrl.listadoContactos();
+        for (String[] row : listado) {
             System.out.printf("%5s %-20s %-20s %-20s%n", row[0], row[1], row[2], row[3]);
         }
     }
