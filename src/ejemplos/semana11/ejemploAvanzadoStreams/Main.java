@@ -23,7 +23,7 @@ public class Main {
                 departamento = sc.next();
                 empleados.add(new Empleado(rut, nombre, sueldo, departamento));
             }
-
+            //todo: Aquí falta más explicación!!
             //reporte completo
             System.out.println("REPORTE COMPLETO (ordenado por departamento, seguido de nombre)");
             System.out.printf("%10S\t%-20S\t%-26S\t%12S %n", "RUT", "NOMBRE", "DEPARTAMENTO", "SUELDO");
